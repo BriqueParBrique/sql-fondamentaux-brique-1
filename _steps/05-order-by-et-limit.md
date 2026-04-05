@@ -53,6 +53,24 @@ LIMIT 3;
 | Matrix | 8.7 |
 | Spirited Away | 8.6 |
 
+### Paginer avec `OFFSET`
+
+`OFFSET` permet de sauter un certain nombre de résultats avant de commencer à afficher. Combiné avec `LIMIT`, c'est le mécanisme de **pagination** utilisé par les sites web :
+
+```sql
+-- Page 1 : les 3 premiers films
+SELECT titre, note FROM films
+ORDER BY note DESC
+LIMIT 3 OFFSET 0;
+
+-- Page 2 : les 3 suivants
+SELECT titre, note FROM films
+ORDER BY note DESC
+LIMIT 3 OFFSET 3;
+```
+
+`OFFSET 3` signifie "saute les 3 premiers résultats". C'est comme ça que fonctionnent les boutons "Page suivante" sur les sites de recherche.
+
 ### Combiner avec `WHERE`
 
 On peut bien sûr combiner `WHERE`, `ORDER BY` et `LIMIT` :
@@ -74,7 +92,8 @@ SELECT colonnes
 FROM table
 WHERE conditions
 ORDER BY colonnes
-LIMIT nombre;
+LIMIT nombre
+OFFSET décalage;
 ```
 
 Cet ordre est **obligatoire**. On ne peut pas mettre `WHERE` après `ORDER BY`, par exemple.
@@ -86,6 +105,7 @@ Cet ordre est **obligatoire**. On ne peut pas mettre `WHERE` après `ORDER BY`, 
 3. Affiche le film le plus ancien
 4. Affiche les films d'animation triés par note décroissante
 5. Affiche les 3 films les mieux notés sortis après 2000
+6. Affiche les films classés 4e à 6e par note décroissante (la "page 2" du top)
 
 <details>
 <summary>Voir les réponses</summary>
@@ -115,6 +135,11 @@ SELECT * FROM films
 WHERE annee > 2000
 ORDER BY note DESC
 LIMIT 3;
+
+-- 6. Page 2 du classement (positions 4 à 6)
+SELECT * FROM films
+ORDER BY note DESC
+LIMIT 3 OFFSET 3;
 ```
 
 </details>

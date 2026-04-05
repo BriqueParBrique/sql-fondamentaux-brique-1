@@ -58,7 +58,17 @@ INSERT INTO films (id, titre, realisateur, annee, genre, pays, note, duree_min) 
 
 **Défi 6 — Combiné** : Affiche les films d'animation japonais, triés par note décroissante.
 
-### Solutions
+<details>
+<summary>Indices</summary>
+
+- **Défi 1** : `SELECT` avec deux colonnes, pas besoin de `WHERE`
+- **Défi 2** : Utilise `WHERE` avec l'opérateur `>`
+- **Défi 3** : Utilise `WHERE` avec `=` sur la colonne `pays`
+- **Défi 4** : Combine `ORDER BY ... DESC` et `LIMIT`
+- **Défi 5** : Utilise `LIKE` avec `%` et combine avec `OR`
+- **Défi 6** : Combine deux conditions avec `AND` et ajoute `ORDER BY`
+
+</details>
 
 <details>
 <summary>Voir les solutions</summary>
@@ -92,13 +102,61 @@ ORDER BY note DESC;
 
 </details>
 
+### Défis bonus
+
+Pour ceux qui veulent aller plus loin :
+
+**Défi 7 — Réalisateur prolifique** : Quel réalisateur a le plus de films dans la base ? Affiche chaque réalisateur et ses films, triés par réalisateur.
+
+**Défi 8 — Pays et genres** : Affiche la liste des pays représentés dans la base (sans doublons).
+
+**Défi 9 — Longs métrages** : Quels films durent plus de 2h30 (150 minutes) ? Affiche leur titre et leur durée, renommée en `duree_heures_min`.
+
+**Défi 10 — Classement paginé** : Affiche les films classés de la 4e à la 6e position par note décroissante (comme une "page 2").
+
+<details>
+<summary>Indices bonus</summary>
+
+- **Défi 7** : Utilise `ORDER BY realisateur` — au Niveau 2, tu apprendras `GROUP BY` et `COUNT` pour compter automatiquement
+- **Défi 8** : Pense à `DISTINCT`
+- **Défi 9** : Utilise `AS` pour renommer et `WHERE` pour filtrer sur `duree_min`
+- **Défi 10** : Combine `ORDER BY`, `LIMIT` et `OFFSET`
+
+</details>
+
+<details>
+<summary>Voir les solutions bonus</summary>
+
+```sql
+-- Défi 7 : Films par réalisateur
+SELECT realisateur, titre FROM films
+ORDER BY realisateur, titre;
+
+-- Défi 8 : Pays sans doublons
+SELECT DISTINCT pays FROM films;
+
+-- Défi 9 : Films de plus de 2h30
+SELECT titre, duree_min AS duree_heures_min FROM films
+WHERE duree_min > 150
+ORDER BY duree_min DESC;
+
+-- Défi 10 : Page 2 du classement
+SELECT titre, note FROM films
+ORDER BY note DESC
+LIMIT 3 OFFSET 3;
+```
+
+</details>
+
 ### Bravo !
 
 Tu maîtrises maintenant les bases de la lecture de données en SQL :
 
 - **SELECT / FROM** pour choisir quoi afficher
-- **WHERE** pour filtrer les résultats
-- **ORDER BY** pour trier
-- **LIMIT** pour limiter le nombre de résultats
+- **DISTINCT** pour éliminer les doublons
+- **AS** pour renommer les colonnes
+- **WHERE** pour filtrer (`=`, `<`, `>`, `LIKE`, `IN`, `BETWEEN`, `IS NULL`)
+- **ORDER BY** pour trier (`ASC`, `DESC`)
+- **LIMIT / OFFSET** pour limiter et paginer les résultats
 
 Au **Niveau 2**, tu apprendras à **transformer et combiner** les données : compter, calculer des moyennes, et croiser plusieurs tables entre elles.

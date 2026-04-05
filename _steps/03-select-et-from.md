@@ -49,6 +49,41 @@ SELECT annee, titre FROM films;
 
 Ici, `annee` apparaîtra avant `titre` dans le résultat.
 
+### Supprimer les doublons avec `DISTINCT`
+
+Si une colonne contient des valeurs répétées, `DISTINCT` permet de n'afficher chaque valeur qu'une seule fois :
+
+```sql
+SELECT DISTINCT genre FROM films;
+```
+
+| genre |
+|-------|
+| Science-fiction |
+| Comédie |
+| Animation |
+| Thriller |
+| Comédie musicale |
+| Drame |
+
+Sans `DISTINCT`, le genre "Comédie" apparaîtrait deux fois (une fois pour Amélie Poulain, une fois pour Intouchables).
+
+### Renommer une colonne avec `AS`
+
+`AS` permet de donner un nom temporaire (un **alias**) à une colonne dans le résultat :
+
+```sql
+SELECT titre, annee AS sortie FROM films;
+```
+
+| titre | sortie |
+|-------|--------|
+| Inception | 2010 |
+| Amélie Poulain | 2001 |
+| ... | ... |
+
+La colonne s'appelle toujours `annee` dans la table, mais elle s'affiche comme `sortie` dans le résultat. C'est utile pour rendre les résultats plus lisibles.
+
 ### La syntaxe SQL
 
 Quelques règles à retenir :
@@ -80,6 +115,8 @@ En utilisant la table `films` créée à l'étape précédente :
 2. Affiche le titre et la note de chaque film
 3. Affiche toutes les colonnes de la table
 4. Affiche le genre et le titre (dans cet ordre) de chaque film
+5. Affiche la liste des genres disponibles (sans doublons)
+6. Affiche le titre et la note, en renommant la colonne `note` en `evaluation`
 
 <details>
 <summary>Voir les réponses</summary>
@@ -96,6 +133,12 @@ SELECT * FROM films;
 
 -- 4. Genre puis titre
 SELECT genre, titre FROM films;
+
+-- 5. Genres sans doublons
+SELECT DISTINCT genre FROM films;
+
+-- 6. Alias sur la colonne note
+SELECT titre, note AS evaluation FROM films;
 ```
 
 </details>

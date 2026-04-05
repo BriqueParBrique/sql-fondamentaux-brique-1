@@ -47,7 +47,7 @@ INSERT INTO films (id, titre, annee, genre, note) VALUES
 (6, 'Toy Story', 1995, 'Animation', 8.3),
 (7, 'La La Land', 2016, 'Comédie musicale', 8.0),
 (8, 'Matrix', 1999, 'Science-fiction', 8.7),
-(9, 'Le Fabuleux Destin d''Amélie Poulain', 2001, 'Comédie', 8.3),
+(9, 'Le Grand Bleu', 1988, 'Drame', 7.6),
 (10, 'Spirited Away', 2001, 'Animation', 8.6);
 ```
 
