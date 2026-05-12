@@ -1,10 +1,22 @@
-- title: "Introduction"
-  file: "01-introduction"
+- title: "C'est quoi SQL ?"
+  file: "01-cest-quoi-sql"
 
-- title: "Installation"
+- title: "Installer son environnement"
   file: "02-installation"
-  requires: "01-introduction" # optionnel : prérequis (file d'une étape précédente)
+  requires: "01-cest-quoi-sql"
 
-- title: "Premier projet"
-  file: "03-premier-projet"
+- title: "SELECT et FROM"
+  file: "03-select-et-from"
   requires: "02-installation"
+
+- title: "WHERE"
+  file: "04-where"
+  requires: "03-select-et-from"
+
+- title: "ORDER BY et LIMIT"
+  file: "05-order-by-et-limit"
+  requires: "04-where"
+
+- title: "Mini-projet"
+  file: "06-mini-projet"
+  requires: "05-order-by-et-limit"
