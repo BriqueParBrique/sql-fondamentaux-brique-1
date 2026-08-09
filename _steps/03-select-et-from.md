@@ -124,7 +124,7 @@ attendu est indiqué entre parenthèses : c'est ta façon de vérifier ton résu
 4. Affiche le genre et le titre (dans cet ordre) de chaque film *(10 lignes)*
 5. Affiche la liste des années de sortie, sans doublon *(9 lignes)*
 
-<details>
+<details markdown="1">
 <summary>Voir les réponses</summary>
 
 ```sql

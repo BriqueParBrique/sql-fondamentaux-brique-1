@@ -173,7 +173,7 @@ Le nombre de lignes attendu est indiqué entre parenthèses.
 6. Affiche les films sortis entre 1995 et 2001 inclus, en utilisant `BETWEEN` *(5 lignes)*
 7. Affiche les films dont le titre fait exactement 6 caractères *(1 ligne — indice : combien de `_` faut-il ?)*
 
-<details>
+<details markdown="1">
 <summary>Voir les réponses</summary>
 
 ```sql

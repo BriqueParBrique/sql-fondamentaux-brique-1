@@ -66,7 +66,7 @@ Tu devrais voir les 10 films s'afficher. Si c'est le cas, bravo, ton environneme
 1. Exécute la requête `SELECT * FROM films;` et vérifie que tu obtiens bien 10 lignes
 2. Essaie de modifier la requête pour écrire `SELECT titre FROM films;` — que se passe-t-il ?
 
-<details>
+<details markdown="1">
 <summary>Voir les réponses</summary>
 
 1. Tu devrais voir un tableau avec 10 lignes et 5 colonnes (id, titre, annee, genre, note)

@@ -128,7 +128,7 @@ Le nombre de lignes attendu est indiqué entre parenthèses.
 5. Affiche les 3 films les mieux notés sortis après 2000. Là encore, deux films
    sont à égalité à 8.5 : départage-les *(3 lignes)*
 
-<details>
+<details markdown="1">
 <summary>Voir les réponses</summary>
 
 ```sql

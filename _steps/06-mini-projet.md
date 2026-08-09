@@ -67,7 +67,7 @@ attendu est indiqué : vérifie-le avant d'ouvrir le corrigé.
 
 ### Solutions
 
-<details>
+<details markdown="1">
 <summary>Voir les solutions</summary>
 
 ```sql
