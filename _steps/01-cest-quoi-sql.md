@@ -52,7 +52,7 @@ Réponds à ces questions sans écrire de code (on fera ça très bientôt !) :
 2. Combien de **lignes** (enregistrements) contient-elle ?
 3. Si tu voulais ajouter le film "Le Roi Lion" sorti en 1994, quelles informations faudrait-il donner ?
 
-<details>
+<details markdown="1">
 <summary>Voir les réponses</summary>
 
 1. 4 colonnes : `id`, `titre`, `annee`, `genre`
